@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 4000
 app.use(`/account`, accountController)
 
 async function start() {
-	await dataSource.initialize()
-	app.listen(PORT, () => {
-		console.log(`server work`)
-	})
+  await dataSource.initialize()
+  app.listen(PORT, () => {
+    console.log(`server work`)
+  })
 }
 
 start()

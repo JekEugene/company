@@ -16,19 +16,19 @@
         "@typescript-eslint"
     ],
     "rules": {
-				"no-unused-vars": "off",
-				"indent": [
-						"error",
-						"tab"
-				],
-				"quotes": [
-						"error",
-						"backtick",
-						{ "avoidEscape": false }
-				],
-				"semi": [
-						"error",
-						"never"
-				]
+		"no-unused-vars": "off",
+		"indent": [
+			"error",
+            2
+		],
+		"quotes": [
+			"error",
+			"backtick",
+			{ "avoidEscape": false }
+		],
+		"semi": [
+			"error",
+			"never"
+		]
     }
 }
