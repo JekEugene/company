@@ -4,7 +4,7 @@
     "experimentalDecorators": true,
     "target": "es2017",
     "outDir": "dist",
-    "rootDir": "./",
+    "baseUrl": "./",
     "moduleResolution": "node",
     "esModuleInterop": true,
   }

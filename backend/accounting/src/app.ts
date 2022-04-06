@@ -1,8 +1,9 @@
 import express, { Request, Response } from 'express'
 const app = express()
 import dotenv from 'dotenv'
-import { dataSource } from './config/ormconfig'
+import * as config from './config/ormconfig'
 import accountController from './modules/account/account.controller'
+import { createConnection } from 'typeorm'
 dotenv.config()
 
 app.use(express.static(__dirname))
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 4000
 app.use(`/account`, accountController)
 
 async function start() {
-  await dataSource.initialize()
+  await createConnection(config)
   app.listen(PORT, () => {
     console.log(`server work`)
   })

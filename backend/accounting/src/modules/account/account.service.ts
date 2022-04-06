@@ -1,10 +1,10 @@
 import { Account } from './account.model'
-import { AccountRepository } from './account.repository'
+import { accountRepository } from './account.repository'
 
 class AccountService {
   public async getMoney(): Promise<number> {
     try {
-      const account: Account = await AccountRepository.getAccount()
+      const account: Account = await accountRepository.getAccount()
 
       if (!account) {
         throw new Error(`account does not exist`)

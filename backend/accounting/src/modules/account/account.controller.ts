@@ -5,7 +5,8 @@ const accountController = Router()
 
 accountController.get(`/money`, async (req: Request, res: Response) => {
   try {
-    return await accountService.getMoney()
+    const money: number = await accountService.getMoney()
+    res.json({money})
   } catch (err) {
     return res.status(404).send(`account not found`)
   }

@@ -6,7 +6,11 @@
   "scripts": {
     "start": "npm run build && ts-node ./src/app.ts",
     "dev": "npm run build && nodemon ./src/app.ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config src/config/ormconfig.ts",
+    "typeorm:create": "npx typeorm migration:create -d src/db/migration -n",
+    "typeorm:migrate": "npm run typeorm migration:generate -- -n",
+    "typeorm:run": "npm run typeorm migration:run"
   },
   "repository": {
     "type": "git",
@@ -22,7 +26,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "pg": "^8.7.3",
-    "typeorm": "^0.3.5"
+    "typeorm": "^0.2.32"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
@@ -34,6 +38,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
-    "ts-node": "^10.7.0"
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.1"
   }
 }

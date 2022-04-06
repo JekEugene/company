@@ -1,8 +1,11 @@
-import { dataSource } from '../../config/ormconfig'
+import { EntityRepository, Repository } from 'typeorm'
 import { Account } from './account.model'
 
-export const AccountRepository = dataSource.getRepository(Account).extend({
-  getAccount(): Promise<Account> {
-    return Account.findOne({ where: { id: 1 } })
-  },
-})
+@EntityRepository(Account)
+class AccountRepository extends Repository<Account>{
+  public async getAccount(): Promise<Account> {
+    return await Account.findOne({ where: { id: 1 } })
+  }
+}
+
+export const accountRepository = new AccountRepository()
