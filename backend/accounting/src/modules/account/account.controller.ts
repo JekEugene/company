@@ -1,12 +1,13 @@
 import { Router, Request, Response } from 'express'
+import { accountService } from './account.service'
 
 const accountController = Router()
 
-accountController.get(`/`, async (req: Request, res: Response) => {
+accountController.get(`/money`, async (req: Request, res: Response) => {
   try {
-    return res.send(`hi`)
+    return await accountService.getMoney()
   } catch (err) {
-    return res.status(400).send(`unknown error`)
+    return res.status(404).send(`account not found`)
   }
 })
 
