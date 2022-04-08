@@ -1,0 +1,12 @@
+D:\SoArch\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\Warehouse.Models.deps.json
+D:\SoArch\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\Warehouse.Models.dll
+D:\SoArch\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\ref\Warehouse.Models.dll
+D:\SoArch\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\Warehouse.Models.pdb
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.csproj.AssemblyReference.cache
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.AssemblyInfoInputs.cache
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.AssemblyInfo.cs
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.csproj.CoreCompileInputs.cache
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.dll
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\ref\Warehouse.Models.dll
+D:\SoArch\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.pdb

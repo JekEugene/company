@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c2b8b0a0-95ed-44ff-8e5c-93731314b4df": {
+      "ProjectGuid": "c2b8b0a0-95ed-44ff-8e5c-93731314b4df",
+      "DisplayName": "PurchaseDepartment",
+      "ColorIndex": 0
+    },
+    "4b71bbd8-d5b9-414d-bc26-a79ce2c47560": {
+      "ProjectGuid": "4b71bbd8-d5b9-414d-bc26-a79ce2c47560",
+      "DisplayName": "PurchaseDepartment.Data",
+      "ColorIndex": 1
+    },
+    "94988292-f8e0-4515-acae-3da1c7e1807a": {
+      "ProjectGuid": "94988292-f8e0-4515-acae-3da1c7e1807a",
+      "DisplayName": "PurchaseDepartment.Models",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

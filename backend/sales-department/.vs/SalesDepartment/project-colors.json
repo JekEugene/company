@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cef2ca1f-8942-4996-a5fd-92def64c862b": {
+      "ProjectGuid": "cef2ca1f-8942-4996-a5fd-92def64c862b",
+      "DisplayName": "SalesDepartment",
+      "ColorIndex": 0
+    },
+    "6311ce15-9d93-45b7-b4ce-04bed37a4b1e": {
+      "ProjectGuid": "6311ce15-9d93-45b7-b4ce-04bed37a4b1e",
+      "DisplayName": "SalesDepartment.Data",
+      "ColorIndex": 1
+    },
+    "1a9d6ee5-9493-43df-9675-ce13771d402f": {
+      "ProjectGuid": "1a9d6ee5-9493-43df-9675-ce13771d402f",
+      "DisplayName": "SalesDepartment.Models",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
