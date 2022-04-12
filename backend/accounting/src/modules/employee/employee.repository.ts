@@ -16,7 +16,7 @@ export class EmployeeRepository extends Repository<Employee> {
   public async createEmployee(
     createEmployeeDto: CreateEmployeeDto
   ): Promise<Employee> {
-    const employee: Employee = await this.create(createEmployeeDto).save()
+    const employee: Employee = await Employee.create(createEmployeeDto).save()
     return employee
   }
 
@@ -24,14 +24,14 @@ export class EmployeeRepository extends Repository<Employee> {
     updateEmployeeDto: UpdateEmployeeDto,
     id: number
   ): Promise<Employee> {
-    await this.update({ id }, updateEmployeeDto)
+    await Employee.update({ id }, updateEmployeeDto)
     const employee: Employee = await this.getById(id)
     return employee
   }
 
   public async deleteEmployee(id: number): Promise<Employee> {
     const employee: Employee = await this.getById(id)
-    await this.delete(id)
+    await Employee.delete(id)
     return employee
   }
 }

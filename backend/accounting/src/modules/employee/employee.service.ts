@@ -19,10 +19,11 @@ class EmployeeService {
       const employees: Employee[] = await this.getAll()
 
       const needMoney: number = employees.reduce((acc, employee) => {
-        return acc + employee.salary
+        return acc + +employee.salary
       }, 0)
+      console.log(needMoney)
 
-      if (needMoney < account.money) {
+      if (needMoney > account.money) {
         throw new Error(`not enough money`)
       }
 
@@ -31,28 +32,29 @@ class EmployeeService {
       return updatedAccount.money
     } catch (e) {
       const message = `could not pay salary. ${e.message}`
+      console.log(message)
       throw new Error(message)
     }
   }
 
   public async getAll(): Promise<Employee[]> {
     try {
-      const employees: Employee[] = await this.employeeRepository.find()
+      const employees: Employee[] = await this.employeeRepository.getAll()
       return employees
     } catch (e) {
       const message = `could not get all employees. ${e.message}`
+      console.log(message)
       throw new Error(message)
     }
   }
 
   public async getById(id: number): Promise<Employee> {
     try {
-      const employee: Employee = await this.employeeRepository.findOne({
-        where: { id },
-      })
+      const employee: Employee = await this.employeeRepository.getById(id)
       return employee
     } catch (e) {
       const message = `could not get employee. ${e.message}`
+      console.log(message)
       throw new Error(message)
     }
   }
@@ -65,6 +67,7 @@ class EmployeeService {
       return employee
     } catch (e) {
       const message = `could not create employee. ${e.message}`
+      console.log(message)
       throw new Error(message)
     }
   }
@@ -81,16 +84,23 @@ class EmployeeService {
       return employee
     } catch (e) {
       const message = `could not update employee. ${e.message}`
+      console.log(message)
       throw new Error(message)
     }
   }
 
   public async delete(id: number): Promise<Employee> {
     try {
-      const employee: Employee = await this.employeeRepository.deleteEmployee(id)
+      const employee: Employee = await this.employeeRepository.deleteEmployee(
+        id
+      )
+      if (!employee) {
+        throw new Error(`employee with provided id does not exist`)
+      }
       return employee
     } catch (e) {
       const message = `could not delete employee. ${e.message}`
+      console.log(message)
       throw new Error(message)
     }
   }
