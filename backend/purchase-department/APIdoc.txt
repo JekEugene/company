@@ -1,0 +1,13 @@
+CRUD:
+	GET, POST: http://127.0.0.1:8000/api/material/
+	GET, PUT, DELETE: http://127.0.0.1:8000/api/material/<id>/
+
+API:
+   Expenses on particular material/feedstock:
+	GET: http://127.0.0.1:8000/api/material/<id>/expenses_on_material/
+	GET: http://127.0.0.1:8000/api/feedstock/<id>/expenses_on_feedstock/
+
+   List of expenses:
+	GET: http://127.0.0.1:8000/api/material/expenses_by_material/
+	GET: http://127.0.0.1:8000/api/feedstock/expenses_by_feedstock/
+

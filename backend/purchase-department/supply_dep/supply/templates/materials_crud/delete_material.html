@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление материала</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.js" integrity="sha512-MNW6IbpNuZZ2VH9ngFhzh6cUt8L/0rSVa60F8L22K1H72ro4Ki3M/816eSDLnhICu7vwH/+/yb8oB3BtBLhMsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <form id="create-mat-form" method="post" v-on:submit.prevent="submitForm" >
+        {% csrf_token %}
+        <input type="text" v-model="material.name" name="name" placeholder="Название материала" />
+        <input type="number" v-model="material.amount" name="amount" placeholder="Количество материала" />
+        <input type="number" v-model="material.cost" name="cost" placeholder="Цена материала" />
+        <input type="number" v-model="material.general_expenses" name="general_expenses" placeholder="Общие расходы" />
+        <input type="submit" v-on:click="submitForm()" value="Добавить" />
+    </form>
+
+
+
+    <script src="/static/mat_crud/create_material.js"></script>
+</body>
+</html>
