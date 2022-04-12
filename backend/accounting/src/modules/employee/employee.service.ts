@@ -15,21 +15,20 @@ class EmployeeService {
   ) {}
   public async paySalary(): Promise<number> {
     try {
-      const account: Account = await this.accountRepository.getAccount()
+      const balance: number = await this.accountRepository.getBalance()
       const employees: Employee[] = await this.getAll()
 
       const needMoney: number = employees.reduce((acc, employee) => {
         return acc + +employee.salary
       }, 0)
-      console.log(needMoney)
 
-      if (needMoney > account.money) {
+      if (needMoney > balance) {
         throw new Error(`not enough money`)
       }
 
-      const updatedAccount: Account =
-        await this.accountRepository.updateAccount(account.money - needMoney)
-      return updatedAccount.money
+      const updatedBalance: number =
+        await this.accountRepository.updateAccount(needMoney)
+      return updatedBalance
     } catch (e) {
       const message = `could not pay salary. ${e.message}`
       console.log(message)
