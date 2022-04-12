@@ -2,7 +2,7 @@ import { Account } from './account.model'
 import { accountRepository } from './account.repository'
 
 class AccountService {
-  public async getMoney(): Promise<number> {
+  public async getBalance(): Promise<number> {
     try {
       const account: Account = await accountRepository.getAccount()
 
