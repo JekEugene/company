@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  db:
+    image: postgres:13
+    container_name: accounting
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+      POSTGRES_DB: accounting
+    ports:
+      - 4001:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
+    name: accounting-db
