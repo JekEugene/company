@@ -32,7 +32,10 @@ namespace Warehouse
             //services.ConfigureSqlContext(Configuration);
             services.AddDbContext<WarehouseContext>(options => options
                 .UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
-            services.ConfigureCors();
+            services.AddCors(options =>
+            options.AddDefaultPolicy(
+                builder => builder.AllowAnyOrigin())
+            );
             services.RegisterRepositories(Configuration);
             services.AddAutoMapper(typeof(Startup));
 
@@ -56,6 +59,8 @@ namespace Warehouse
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
