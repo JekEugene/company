@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace Warehouse.Controllers
             _mapper = mapper;
         }
 
+        [EnableCors]
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
@@ -29,6 +31,7 @@ namespace Warehouse.Controllers
             return Ok(products);
         }
 
+        [EnableCors]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
         {
@@ -36,6 +39,7 @@ namespace Warehouse.Controllers
             return Ok(product);
         }
 
+        [EnableCors]
         [HttpPost]
         public IActionResult CreateProduct([FromBody] ProductCreateDTO product)
         {
@@ -59,6 +63,7 @@ namespace Warehouse.Controllers
         {
 
         }*/
+        [EnableCors]
         [HttpGet("/products/sell/{id}/{quantity}")]
         public async Task<IActionResult> UpdateProduct([FromRoute]int id, int quantity)
         {
