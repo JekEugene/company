@@ -22,3 +22,14 @@ C:\Users\ryzen\Desktop\pp\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.csp
 C:\Users\ryzen\Desktop\pp\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.dll
 C:\Users\ryzen\Desktop\pp\Warehouse.Models\obj\Debug\net5.0\ref\Warehouse.Models.dll
 C:\Users\ryzen\Desktop\pp\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.pdb
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\Warehouse.Models.deps.json
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\Warehouse.Models.dll
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\ref\Warehouse.Models.dll
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\bin\Debug\net5.0\Warehouse.Models.pdb
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.AssemblyInfoInputs.cache
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.AssemblyInfo.cs
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.csproj.CoreCompileInputs.cache
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.dll
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\ref\Warehouse.Models.dll
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.pdb

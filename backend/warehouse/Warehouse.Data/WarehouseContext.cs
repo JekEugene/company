@@ -37,10 +37,5 @@ namespace Warehouse.Data
                 });
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Warehouse;Trusted_Connection=True");
-            optionsBuilder.LogTo(Console.WriteLine);
-        }
     }
 }

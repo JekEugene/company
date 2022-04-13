@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj": {}
+    "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj": {}
   },
   "projects": {
-    "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj": {
+    "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj",
+        "projectUniqueName": "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj",
         "projectName": "Warehouse.Data",
-        "projectPath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj",
+        "projectPath": "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj",
         "packagesPath": "C:\\Users\\ryzen\\.nuget\\packages\\",
-        "outputPath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\obj\\",
+        "outputPath": "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

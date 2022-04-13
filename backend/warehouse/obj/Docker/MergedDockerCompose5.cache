@@ -1,0 +1,29 @@
+name: dockercompose13166547049868277498
+services:
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: 1Secure*Password1
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    networks:
+      default: null
+  warehouse:
+    build:
+      context: D:\PROJECT\company\backend\warehouse
+      dockerfile: Warehouse/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: warehouse
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8080"
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose13166547049868277498_default
