@@ -5,7 +5,9 @@ import * as config from './config/ormconfig'
 import accountController from './modules/account/account.controller'
 import { createConnection } from 'typeorm'
 import employeeController from './modules/employee/employee.controller'
+import cors from 'cors'
 dotenv.config()
+app.use(cors())
 
 app.use(express.static(__dirname))
 app.use(express.json())
