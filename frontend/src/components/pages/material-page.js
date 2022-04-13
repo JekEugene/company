@@ -1,106 +1,341 @@
-import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import {
+  Container,
+  Row,
+  Form,
+  FormGroup,
+  FormControl,
+  FormLabel,
+  Button,
+  Table,
+} from "react-bootstrap";
 
 export default class MaterialPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      quantity: "",
+      cost: "",
+      summaryCost: "",
+      id: "",
+      records: [
+        { id: 1, name: "iron", quantity: 20, cost: 14 },
+        { id: 2, name: "wood", quantity: 45, cost: 8 },
+      ],
+      update: false,
+      buy: false,
+    };
+  }
 
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     user: null,
-  //     posts: []
-  //   }
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+    });
+  };
+
+  handleChangeQuantity = (evt) => {
+    const record = this.state.records.find(
+      (record) => this.state.id === record.id
+    );
+
+    this.setState({
+      [evt.target.name]: evt.target.value,
+      summaryCost: record.cost * evt.target.value,
+    });
+  };
+
+  // componentWillMount() {
+  //   this.fetchAllRecords();
   // }
 
-  // componentDidMount = async () => {
-  //   let res1 = await fetch(`http://localhost:4000${window.location.pathname}`, {
-  //       method: 'GET',
-  //       credentials: 'include',
-  //   });
-  //   const result1 = await res1.json()
-  //   console.log(result1.id + "user1"+ result1.name)
-  //   this.setState({ user: result1})
-  //   let res2 = await fetch(`http://localhost:4000${window.location.pathname}/getPosts`, {
-  //     method: 'Get',
-  //     credentials: 'include',
-  //     // headers: {
-  //     //   'Content-Type': 'application/json;charset=utf-8'
-  //     // },
-  //     //body: JSON.stringify({user_id: result1.id})
-  //   });
-  //   const result2 = await res2.json()
-  //   this.setState({posts: result2})
-  // }
+  // add a record
+  addRecord = () => {
+    if (!this.state.name || !this.state.surname || !this.state.salary) {
+      return;
+    }
 
-  // render(){
-  //   if(this.state.user === null) {
-  //     return(
-  //       <div className="jumbotron">
-  //         <div class="spinner-border" role="status">
-  //           <span class="sr-only">Loading...</span>
-  //         </div>
-  //       </div>
-  //     )
-  //   }
-  //   if(this.state.user === undefined){
-  //       return(
-  //         <div className="jumbotron text-center">
-  //           <h2>User not found</h2>
-  //         </div>
-  //       )
-  //   }
-  //   const options = {
-  //     year: 'numeric',
-  //     month: 'long',
-  //     day: 'numeric',
-  //     weekday: 'long',
-  //     timezone: 'UTC',
-  //     hour: 'numeric',
-  //     minute: 'numeric',
-  //     second: 'numeric'
-  //   }
-  //   let posts = ''
-  //   if(this.state.posts === null) {
-  //     posts = <><div className="jumbotron">
-  //                 <div class="spinner-border" role="status">
-  //                   <span class="sr-only">Loading...</span>
-  //                 </div>
-  //             </div></>
-  //   } else {
-  //     if(this.state.posts === undefined || this.state.posts.length == 0){
-  //       posts = <><div className="jumbotron">
-  //                   <h3>No posts</h3>
-  //                 </div></>
-  //     } else {
-  //       console.log('warning')
-  //       console.log(this.state.posts)
-  //       posts = this.state.posts.map((post)=>{
-  //         return  <><div className="row">
-  //                     <div className="col-md-1"></div>
-  //                     <div className="col-sm-12 col-md-10">
-  //                       <p><Link to={`/user/${post.user_id}`}><strong>{post.user_name}</strong></Link> {new Date(+post.date).toLocaleString("en-US", options)}</p>
-  //                       <h3>{post.title} </h3>
-  //                       <p>{post.text.slice(0, 500)+"..."}</p>
-  //                       <Link to={`/post/${post.id}`}>
-  //                         <button className="btn btn-secondary">Read more</button>
-  //                       </Link>
-  //                     </div>
-  //                   </div>
-  //                   <hr />
-  //                 </>
-  //       })
-  //     }
-  //   }
-    
-  //   return (
-  //     <div className="jumbotron row">
-  //       <div className="col-md-1"></div>
-  //       <div className="col-sm-12 col-md-10">
-  //         <h2>{this.state.user.name}</h2>
-  //         <p>Date of registration: {new Date(+this.state.user.date).toLocaleString("en-US", options)}</p>
-  //         <p>last posts:</p>
-  //         {posts}
-  //       </div>
-  //     </div>
-  //   );
-  // }
-};
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const body = JSON.stringify({
+      name: this.state.name,
+      surname: this.state.surname,
+      salary: +this.state.salary,
+    });
+    fetch("http://localhost:4000/employee", {
+      method: "POST",
+      headers: myHeaders,
+      body: body,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        this.setState({
+          name: "",
+          quantity: "",
+          cost: "",
+          summaryCost: "",
+          id: "",
+        });
+        this.fetchAllRecords();
+      });
+  };
+
+  fetchAllRecords = () => {
+    var headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    fetch("http://localhost:4000/employee", {
+      method: "GET",
+      headers: headers,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("result", result);
+        this.setState({
+          records: result,
+        });
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  editRecord = (id, name, cost) => {
+    // fetch("http://localhost:4000/employee/" + id, {
+    //   method: "GET",
+    // })
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     console.log(result);
+    //     this.setState({
+    //       id: id,
+    //       name: result.name,
+    //       surname: result.surname,
+    //       salary: result.salary,
+    //       update: true,
+    //       buy: false
+    //     });
+    //   })
+    //   .catch((error) => console.log("error", error));
+    this.setState({
+      id,
+      name,
+      cost,
+      update: true,
+      buy: false,
+    });
+  };
+
+  buyMaterial = (id) => {
+    this.setState({
+      id,
+      buy: true,
+      update: false,
+      name: "",
+      quantity: "",
+      cost: "",
+      summaryCost: "",
+    });
+  };
+
+  updateRecord = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var body = JSON.stringify({
+      name: this.state.name,
+      surname: this.state.surname,
+      salary: this.state.salary,
+    });
+    fetch("http://localhost:4000/employee/" + this.state.id, {
+      method: "PATCH",
+      headers: myHeaders,
+      body: body,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({
+          update: false,
+          name: "",
+          quantity: "",
+          cost: "",
+          summaryCost: "",
+          id: "",
+        });
+        this.fetchAllRecords();
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  cancelUpdate = () => {
+    this.setState({
+      update: false,
+      name: '',
+      quantity: '',
+      cost: '',
+      summaryCost: '',
+      id: '',
+    });
+  };
+
+  cancelBuy = () => {
+    this.setState({
+      buy: false,
+      name: '',
+      quantity: '',
+      cost: '',
+      summaryCost: '',
+      id: '',
+    });
+  };
+
+  deleteRecord = (id) => {
+    fetch("http://localhost:4000/employee/" + id, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        this.fetchAllRecords();
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  render() {
+    return (
+      <div>
+        <Container>
+          <Row>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Name</th>
+                  <th>quantity</th>
+                  <th>costPerMaterial</th>
+                  <th colSpan="3">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.records.map((record) => {
+                  return (
+                    <tr>
+                      <td>{record.id}</td>
+                      <td>{record.name}</td>
+                      <td>{record.quantity}</td>
+                      <td>{record.cost}</td>
+                      <td>
+                        <Button
+                          variant="info"
+                          onClick={() => this.editRecord(record.id)}
+                        >
+                          Edit
+                        </Button>
+                      </td>
+                      <td>
+                        <Button
+                          variant="info"
+                          onClick={() => this.buyMaterial(record.id)}
+                        >
+                          Buy
+                        </Button>
+                      </td>
+                      <td>
+                        <Button
+                          variant="danger"
+                          onClick={() => this.deleteRecord(record.id)}
+                        >
+                          Delete
+                        </Button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </Table>
+          </Row>
+
+          {this.state.update ? (
+            <Row>
+              <Form>
+                <FormGroup>
+                  <FormLabel>Enter the name</FormLabel>
+                  <FormControl
+                    type="text"
+                    name="name"
+                    placeholder="Enter the name"
+                    onChange={this.handleChange}
+                    value={this.state.name}
+                  ></FormControl>
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel>Enter the cost</FormLabel>
+                  <FormControl
+                    type="text"
+                    name="cost"
+                    placeholder="Enter the cost"
+                    onChange={this.handleChange}
+                    value={this.state.cost}
+                  ></FormControl>
+                </FormGroup>
+                <br></br>
+                <Button onClick={this.updateRecord}>update</Button>{" "}
+                <Button onClick={this.cancelUpdate}>отменить</Button>
+              </Form>
+            </Row>
+          ) : this.state.buy === true ? (
+            <Row>
+              <Form>
+                <p>id: {this.state.id}</p>
+                <FormGroup>
+                  <FormLabel>Enter the quantity</FormLabel>
+                  <FormControl
+                    type="text"
+                    name="quantity"
+                    placeholder="Enter the cost"
+                    onChange={this.handleChangeQuantity}
+                    value={this.state.quantity}
+                  ></FormControl>
+                </FormGroup>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <p>summary cost: {this.state.summaryCost}</p>
+                <br></br>
+                <Button onClick={this.updateRecord}>buy</Button>{" "}
+                <Button onClick={this.cancelBuy}>отменить</Button>
+              </Form>
+            </Row>
+          ) : (
+            <Row>
+              <Form>
+                <FormGroup>
+                  <FormLabel>Enter the name</FormLabel>
+                  <FormControl
+                    type="text"
+                    name="name"
+                    placeholder="Enter the name"
+                    onChange={this.handleChange}
+                    value={this.state.name}
+                  ></FormControl>
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel>Enter the cost</FormLabel>
+                  <FormControl
+                    type="text"
+                    name="cost"
+                    placeholder="Enter the cost"
+                    onChange={this.handleChange}
+                    value={this.state.cost}
+                  ></FormControl>
+                </FormGroup>
+                <br></br>
+                <Button onClick={this.addRecord}>Save</Button>
+              </Form>
+            </Row>
+          )}
+        </Container>
+      </div>
+    );
+  }
+}

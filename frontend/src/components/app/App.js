@@ -25,30 +25,6 @@ export default class App extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  //   componentDidMount = async () => {
-  //     try {
-  //       const res = await fetch("http://localhost:4000", {
-  //         method: "GET",
-  //         credentials: "include",
-  //       });
-  //       const result = await res.json();
-  //       if (result.role === "guest" || result.role === 0) {
-  //         this.setState({
-  //           name: result.name,
-  //           role: result.role,
-  //         });
-  //       } else {
-  //         this.setState({
-  //           id: result.id,
-  //           name: result.name,
-  //           role: result.role,
-  //         });
-  //       }
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-
   componentDidMount = async () => {
     try {
       const res = await fetch("http://localhost:4000/account/balance", {
@@ -103,13 +79,8 @@ export default class App extends Component {
               />
               <Route
                 path="/material"
-                render={() => (
-                  <MaterialPage
-                    user_id={this.state.id}
-                    role={this.state.role}
-                    name={this.state.name}
-                  />
-                )}
+                exact
+                element={<MaterialPage />}
               />
 
               <Route render={() => <h2>Page not found</h2>} />
