@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SoArch\\company\\backend\\sales-department\\SalesDepartment\\SalesDepartment.Models\\SalesDepartment.Models.csproj",
+      "projectUniqueName": "D:\\SoArch\\company\\backend\\sales-department\\SalesDepartment.Models\\SalesDepartment.Models.csproj",
       "projectName": "SalesDepartment.Models",
-      "projectPath": "D:\\SoArch\\company\\backend\\sales-department\\SalesDepartment\\SalesDepartment.Models\\SalesDepartment.Models.csproj",
+      "projectPath": "D:\\SoArch\\company\\backend\\sales-department\\SalesDepartment.Models\\SalesDepartment.Models.csproj",
       "packagesPath": "C:\\Users\\ryzen\\.nuget\\packages\\",
-      "outputPath": "D:\\SoArch\\company\\backend\\sales-department\\SalesDepartment\\SalesDepartment.Models\\obj\\",
+      "outputPath": "D:\\SoArch\\company\\backend\\sales-department\\SalesDepartment.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

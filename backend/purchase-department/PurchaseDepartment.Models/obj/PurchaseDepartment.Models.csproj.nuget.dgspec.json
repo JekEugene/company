@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj": {}
+    "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj": {}
   },
   "projects": {
-    "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj": {
+    "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj",
+        "projectUniqueName": "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj",
         "projectName": "PurchaseDepartment.Models",
-        "projectPath": "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj",
+        "projectPath": "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment.Models\\PurchaseDepartment.Models.csproj",
         "packagesPath": "C:\\Users\\ryzen\\.nuget\\packages\\",
-        "outputPath": "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment\\PurchaseDepartment.Models\\obj\\",
+        "outputPath": "D:\\SoArch\\company\\backend\\purchase-department\\PurchaseDepartment.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

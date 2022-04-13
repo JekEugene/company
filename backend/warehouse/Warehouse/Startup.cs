@@ -28,7 +28,9 @@ namespace Warehouse
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureSqlContext(Configuration);
-
+            services.ConfigureCors();
+            services.RegisterRepositories(Configuration);
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Warehouse.Data\Warehouse.Data.csproj" />
+    <ProjectReference Include="..\Warehouse.Models\Warehouse.Models.csproj" />
   </ItemGroup>
 
 </Project>

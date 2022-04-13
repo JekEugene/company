@@ -6,10 +6,10 @@ namespace Warehouse.Data.Models
 {
     public class ProductMaterial
     {
-        public Guid ProductId { get; set; } 
-        public Guid MaterialId { get; set; }
-        public Product Product { get; set; }
+        public int MaterialId { get; set; }
+        public int ProductId { get; set; }
         public Material Material { get; set; }
-        public int MaterialCount { get; set; }
+        public Product Product { get; set; }
+        public int Count { get; set; }
     }
 }

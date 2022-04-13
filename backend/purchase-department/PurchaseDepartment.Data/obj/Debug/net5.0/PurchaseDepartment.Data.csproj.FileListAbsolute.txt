@@ -1,0 +1,15 @@
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\bin\Debug\net5.0\PurchaseDepartment.Data.deps.json
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\bin\Debug\net5.0\PurchaseDepartment.Data.runtimeconfig.json
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\bin\Debug\net5.0\PurchaseDepartment.Data.runtimeconfig.dev.json
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\bin\Debug\net5.0\PurchaseDepartment.Data.dll
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\bin\Debug\net5.0\ref\PurchaseDepartment.Data.dll
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\bin\Debug\net5.0\PurchaseDepartment.Data.pdb
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.csproj.AssemblyReference.cache
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.AssemblyInfoInputs.cache
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.AssemblyInfo.cs
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.csproj.CoreCompileInputs.cache
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.dll
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\ref\PurchaseDepartment.Data.dll
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.pdb
+D:\SoArch\company\backend\purchase-department\PurchaseDepartment.Data\obj\Debug\net5.0\PurchaseDepartment.Data.genruntimeconfig.cache

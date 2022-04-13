@@ -9,13 +9,12 @@ namespace Warehouse.Data
         public WarehouseContext(DbContextOptions options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
 
         public DbSet<Material> Materials { get; set; }
-        public DbSet<RawMaterial> RawMaterials { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductMaterial> ProductMaterials { get; set; }
-        public DbSet<ProductRawMaterial> ProductRawMaterials { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>()
@@ -32,28 +31,9 @@ namespace Warehouse.Data
                 .HasForeignKey(pm => pm.ProductId),
                 j =>
                 {
-                    j.Property(pm => pm.MaterialCount);
+                    j.Property(pm => pm.Count);
                     j.HasKey(t => new { t.ProductId, t.MaterialId });
                     j.ToTable("ProductMaterial");
-                });
-
-            modelBuilder.Entity<Product>()
-                .HasMany(p => p.RawMaterials)
-                .WithMany(m => m.Products)
-                .UsingEntity<ProductRawMaterial>(
-                j => j
-                .HasOne(pm => pm.RawMaterial)
-                .WithMany(t => t.ProductRawMaterials)
-                .HasForeignKey(pm => pm.RawMaterialId),
-                j => j
-                .HasOne(pm => pm.Product)
-                .WithMany(t => t.ProductRawMaterials)
-                .HasForeignKey(pm => pm.ProductId),
-                j =>
-                {
-                    j.Property(pm1 => pm1.RawMaterialCount);
-                    j.HasKey(t => new { t.ProductId, t.RawMaterialId });
-                    j.ToTable("ProductRawMaterial");
                 });
         }
 

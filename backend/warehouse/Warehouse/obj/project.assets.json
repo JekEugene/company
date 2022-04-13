@@ -1648,6 +1648,16 @@
         "runtime": {
           "bin/placeholder/Warehouse.Data.dll": {}
         }
+      },
+      "Warehouse.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Warehouse.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Warehouse.Models.dll": {}
+        }
       }
     }
   },
@@ -6144,6 +6154,11 @@
       "type": "project",
       "path": "../Warehouse.Data/Warehouse.Data.csproj",
       "msbuildProject": "../Warehouse.Data/Warehouse.Data.csproj"
+    },
+    "Warehouse.Models/1.0.0": {
+      "type": "project",
+      "path": "../Warehouse.Models/Warehouse.Models.csproj",
+      "msbuildProject": "../Warehouse.Models/Warehouse.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6153,7 +6168,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.15",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.14.0",
       "Swashbuckle.AspNetCore >= 5.6.3",
-      "Warehouse.Data >= 1.0.0"
+      "Warehouse.Data >= 1.0.0",
+      "Warehouse.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6190,6 +6206,9 @@
           "projectReferences": {
             "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj": {
               "projectPath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj"
+            },
+            "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Models\\Warehouse.Models.csproj": {
+              "projectPath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Models\\Warehouse.Models.csproj"
             }
           }
         }
