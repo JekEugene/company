@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -15,13 +16,13 @@ namespace Warehouse.Controllers
     {
         private readonly IMaterialRepository _repository;
         private readonly IMapper _mapper;
-
+        
         public MaterialsController(IMaterialRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
-
+        [EnableCors]
         [HttpGet]
         public async Task<IActionResult> GetMaterials()
         {
@@ -29,6 +30,7 @@ namespace Warehouse.Controllers
             return Ok(products);
         }
 
+        [EnableCors]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMaterial(int id)
         {
@@ -36,6 +38,7 @@ namespace Warehouse.Controllers
             return Ok(product);
         }
 
+        [EnableCors]
         [HttpPost]
         public IActionResult CreateMaterial([FromBody] MaterialCreateDTO material)
         {
@@ -54,6 +57,7 @@ namespace Warehouse.Controllers
             return Created("/products" + materialEntity.Id, materialToReturn);
         }
 
+        [EnableCors]
         [HttpGet("/materials/sell/{id}/{quantity}")]
         public async Task<IActionResult> UpdateMaterial([FromRoute] int id, int quantity)
         {
