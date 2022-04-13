@@ -19,10 +19,7 @@ export default class MaterialPage extends Component {
       cost: "",
       summaryCost: "",
       id: "",
-      records: [
-        { id: 1, name: "iron", quantity: 20, cost: 14 },
-        { id: 2, name: "wood", quantity: 45, cost: 8 },
-      ],
+      records: [],
       update: false,
       buy: false,
     };
@@ -45,9 +42,9 @@ export default class MaterialPage extends Component {
     });
   };
 
-  // componentWillMount() {
-  //   this.fetchAllRecords();
-  // }
+  componentWillMount() {
+    this.fetchAllRecords();
+  }
 
   // add a record
   addRecord = () => {
@@ -85,7 +82,7 @@ export default class MaterialPage extends Component {
   fetchAllRecords = () => {
     var headers = new Headers();
     headers.append("Content-Type", "application/json");
-    fetch("http://localhost:4000/employee", {
+    fetch("http://localhost:8080/materials", {
       method: "GET",
       headers: headers,
     })
