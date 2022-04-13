@@ -1,0 +1,12 @@
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\bin\Debug\net5.0\SalesDepartment.Models.deps.json
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\bin\Debug\net5.0\SalesDepartment.Models.dll
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\bin\Debug\net5.0\ref\SalesDepartment.Models.dll
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\bin\Debug\net5.0\SalesDepartment.Models.pdb
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.csproj.AssemblyReference.cache
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.AssemblyInfoInputs.cache
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.AssemblyInfo.cs
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.csproj.CoreCompileInputs.cache
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.dll
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\ref\SalesDepartment.Models.dll
+D:\SoArch\company\backend\sales-department\SalesDepartment.Models\obj\Debug\net5.0\SalesDepartment.Models.pdb
