@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZqwIUUiDF0wKb20qe+za9OLsijfJLVkperipfSJ8JR+eNZN9FjNVEsxmajFvt9EWC8NwBd4yY0ueghbOWluAZA==",
+  "dgSpecHash": "SiwGjNmvjvndBiKIwpD/NTFfqyfV038nT1cLEKyzcgn97UcIYMgR3sbjHKVsj03nWUPyFc7MZM2UzXUAekoLrg==",
   "success": true,
-  "projectFilePath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse\\Warehouse.csproj",
+  "projectFilePath": "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse\\Warehouse.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ryzen\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\ryzen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

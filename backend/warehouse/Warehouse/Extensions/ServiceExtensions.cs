@@ -17,10 +17,10 @@ namespace Warehouse.Extensions
                 .AllowAnyMethod()
                 .AllowAnyHeader());
             });
-        public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
+        /*public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
             services.AddDbContext<WarehouseContext>(opts =>
             opts.UseSqlServer(configuration.GetConnectionString("sqlConnection"),
-            b => b.MigrationsAssembly("Warehouse")));
+            b => b.MigrationsAssembly("Warehouse")));*/
 
         public static void RegisterRepositories(this IServiceCollection services, IConfiguration configuration)
         {

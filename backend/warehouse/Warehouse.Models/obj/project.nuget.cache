@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wQpJY1s8TQ/DB+7bXAsDf3rwiJd0i299f22r94W1z3sxxPkxURVyhHsjT1VeEBKAh4vzZM+LLDU0xWPgkx3LJQ==",
+  "dgSpecHash": "L3unxSWA4m/8X3ngt6mfTSThKOFUgtOloTXcz9EuQBlWjwpik0feb6Qiu3we2jn8uB4W9V1yY/O0GmDhq6VExg==",
   "success": true,
-  "projectFilePath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Models\\Warehouse.Models.csproj",
+  "projectFilePath": "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Models\\Warehouse.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IgtVp5diBq7pWrO/dBSxXsYNkP1zZsgsTBE2/s36m8XT/itn/vkWLgrL2WjwhQ5D4ms3tH0yhD1jDqIQmHWs8A==",
+  "dgSpecHash": "TUQ6DOGiAo6c5WNWNfrCfHjApmcESBbAYkoylKiTgk0N6/O4yVlkyGf7IAi0uUTVVDtQp0OnmDGsgJnPS0/J4g==",
   "success": true,
-  "projectFilePath": "D:\\SoArch\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj",
+  "projectFilePath": "D:\\PROJECT\\company\\backend\\warehouse\\Warehouse.Data\\Warehouse.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ryzen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ryzen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

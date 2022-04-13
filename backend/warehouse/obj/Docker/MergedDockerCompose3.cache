@@ -1,0 +1,19 @@
+name: dockercompose13166547049868277498
+services:
+  warehouse:
+    build:
+      context: D:\PROJECT\company\backend\warehouse
+      dockerfile: Warehouse/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: warehouse
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8080"
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose13166547049868277498_default
