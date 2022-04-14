@@ -69,13 +69,7 @@ export default class App extends Component {
               <Route
                 path="/product"
                 exact
-                render={() => (
-                  <ProductPage
-                    id={this.state.id}
-                    role={this.state.role}
-                    alertCreate={(text, type) => this.alertCreate(text, type)}
-                  />
-                )}
+                element={<ProductPage />}
               />
               <Route
                 path="/material"

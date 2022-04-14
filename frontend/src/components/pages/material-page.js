@@ -48,7 +48,7 @@ export default class MaterialPage extends Component {
 
   // add a record
   addRecord = () => {
-    if (!this.state.name || !this.state.surname || !this.state.salary) {
+    if (!this.state.name || !this.state.cost) {
       return;
     }
 
@@ -57,10 +57,10 @@ export default class MaterialPage extends Component {
 
     const body = JSON.stringify({
       name: this.state.name,
-      surname: this.state.surname,
-      salary: +this.state.salary,
+      cost: this.state.cost,
+      quantity: this.state.quantity,
     });
-    fetch("http://localhost:4000/employee", {
+    fetch("http://localhost:8080/materials", {
       method: "POST",
       headers: myHeaders,
       body: body,
@@ -97,22 +97,6 @@ export default class MaterialPage extends Component {
   };
 
   editRecord = (id, name, cost) => {
-    // fetch("http://localhost:4000/employee/" + id, {
-    //   method: "GET",
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     console.log(result);
-    //     this.setState({
-    //       id: id,
-    //       name: result.name,
-    //       surname: result.surname,
-    //       salary: result.salary,
-    //       update: true,
-    //       buy: false
-    //     });
-    //   })
-    //   .catch((error) => console.log("error", error));
     this.setState({
       id,
       name,
@@ -134,59 +118,30 @@ export default class MaterialPage extends Component {
     });
   };
 
-  updateRecord = () => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var body = JSON.stringify({
-      name: this.state.name,
-      surname: this.state.surname,
-      salary: this.state.salary,
-    });
-    fetch("http://localhost:4000/employee/" + this.state.id, {
-      method: "PATCH",
-      headers: myHeaders,
-      body: body,
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        this.setState({
-          update: false,
-          name: "",
-          quantity: "",
-          cost: "",
-          summaryCost: "",
-          id: "",
-        });
-        this.fetchAllRecords();
-      })
-      .catch((error) => console.log("error", error));
-  };
-
   cancelUpdate = () => {
     this.setState({
       update: false,
-      name: '',
-      quantity: '',
-      cost: '',
-      summaryCost: '',
-      id: '',
+      name: "",
+      quantity: "",
+      cost: "",
+      summaryCost: "",
+      id: "",
     });
   };
 
   cancelBuy = () => {
     this.setState({
       buy: false,
-      name: '',
-      quantity: '',
-      cost: '',
-      summaryCost: '',
-      id: '',
+      name: "",
+      quantity: "",
+      cost: "",
+      summaryCost: "",
+      id: "",
     });
   };
 
   deleteRecord = (id) => {
-    fetch("http://localhost:4000/employee/" + id, {
+    fetch("http://localhost:8080/materials/" + id, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -208,7 +163,7 @@ export default class MaterialPage extends Component {
                   <th>Name</th>
                   <th>quantity</th>
                   <th>costPerMaterial</th>
-                  <th colSpan="3">Actions</th>
+                  <th colSpan="2">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -219,14 +174,6 @@ export default class MaterialPage extends Component {
                       <td>{record.name}</td>
                       <td>{record.quantity}</td>
                       <td>{record.cost}</td>
-                      <td>
-                        <Button
-                          variant="info"
-                          onClick={() => this.editRecord(record.id)}
-                        >
-                          Edit
-                        </Button>
-                      </td>
                       <td>
                         <Button
                           variant="info"
@@ -324,6 +271,16 @@ export default class MaterialPage extends Component {
                     placeholder="Enter the cost"
                     onChange={this.handleChange}
                     value={this.state.cost}
+                  ></FormControl>
+                </FormGroup>
+                <FormGroup>
+                  <FormLabel>Enter the quantity</FormLabel>
+                  <FormControl
+                    type="number"
+                    name="quantity"
+                    placeholder="Enter the quantity"
+                    onChange={this.handleChange}
+                    value={this.state.quantity}
                   ></FormControl>
                 </FormGroup>
                 <br></br>
