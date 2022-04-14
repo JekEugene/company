@@ -8,8 +8,10 @@ namespace Warehouse.Data.Repositories.Abstracts
     {
         Task<List<Product>> GetProductsAsync();
         Task<Product> GetProductByIdAsync(int id);
+        Task<List<ProductMaterial>> GetProductMaterialByIdAsync(int id);
         void CreateProduct(Product product);
         void DeleteProduct(Product product);
+        void AddProductMaterial(ProductMaterial productMaterial);
         void Save();
     }
 }

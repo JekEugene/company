@@ -7,6 +7,7 @@ using Warehouse.Data.Models;
 using Warehouse.Data.Repositories.Abstracts;
 using Warehouse.Models;
 using Warehouse.Models.ResponseModels;
+using Warehouse.Services;
 
 namespace Warehouse.Controllers
 {
@@ -16,11 +17,12 @@ namespace Warehouse.Controllers
     {
         private readonly IProductRepository _repository;
         private readonly IMapper _mapper;
-
-        public ProductsController(IProductRepository repository, IMapper mapper)
+        private readonly IProductService _service;
+        public ProductsController(IProductRepository repository, IMapper mapper, IProductService service)
         {
             _repository = repository;
             _mapper = mapper;
+            _service = service;
         }
 
         [EnableCors]
@@ -37,6 +39,24 @@ namespace Warehouse.Controllers
         {
             var product = await _repository.GetProductByIdAsync(id);
             return Ok(product);
+        }
+
+        [EnableCors]
+        [HttpPost("{productId}")]
+        public IActionResult AddMaterialForProduct([FromBody] ProductMaterialDTO product)
+        {
+            if (product == null)
+            {
+                return BadRequest(ApiResult.CreateFailedResult("Not found"));
+            }
+
+            var addedProduct = _mapper.Map<ProductMaterial>(product);
+            _repository.AddProductMaterial(addedProduct);
+            _repository.Save();
+
+            var productToReturn = _mapper.Map<ProductMaterialDTO>(addedProduct);
+
+            return Created("/products" + addedProduct.MaterialId, productToReturn);
         }
 
         [EnableCors]
@@ -58,6 +78,12 @@ namespace Warehouse.Controllers
             return Created("/products" + productEntity.Id, productToReturn);
         }
 
+        [HttpPost("/produceproduct")]
+        public async Task<IActionResult> ProduceProduct(int id, int quantity)
+        {
+            var result = await _service.ProduceProduct(id, quantity);
+            return Ok(result);
+        }
         /*[HttpPost("/{id}/material/add")]
         public IActionResult CreateMaterialForProduct(int id, [FromBody] int materialId, int quantity)
         {
@@ -81,6 +107,22 @@ namespace Warehouse.Controllers
             product.Quantity -= quantity;
             _repository.Save();
             return Ok(ApiResult.CreateSuccessfulResult("izmeneno"));
+        }
+
+        [EnableCors]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMaterial(int id)
+        {
+            var product = await _repository.GetProductByIdAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteProduct(product);
+            _repository.Save();
+
+            return NoContent();
         }
     }
 }

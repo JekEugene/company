@@ -26,8 +26,8 @@ namespace Warehouse.Controllers
         [HttpGet]
         public async Task<IActionResult> GetMaterials()
         {
-            var products = await _repository.GetMaterialsAsync();
-            return Ok(products);
+            var materials = await _repository.GetMaterialsAsync();
+            return Ok(materials);
         }
 
         [EnableCors]
@@ -58,7 +58,7 @@ namespace Warehouse.Controllers
         }
 
         [EnableCors]
-        [HttpGet("/materials/sell/{id}/{quantity}")]
+        [HttpGet("/materials/add/{id}/{quantity}")]
         public async Task<IActionResult> UpdateMaterial([FromRoute] int id, int quantity)
         {
             var material = await _repository.GetMaterialByIdAsync(id);
@@ -67,14 +67,25 @@ namespace Warehouse.Controllers
                 return BadRequest(ApiResult.CreateFailedResult("Not found"));
             }
 
-            if (material.Quantity < 100)
-            {
-                return BadRequest(ApiResult.CreateFailedResult("I tak hvataet"));
-            }
-
             material.Quantity += quantity;
             _repository.Save();
             return Ok(ApiResult.CreateSuccessfulResult("izmeneno"));
+        }
+
+        [EnableCors]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMaterial(int id)
+        {
+            var material = await _repository.GetMaterialByIdAsync(id);
+            if (material == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteMaterial(material);
+            _repository.Save();
+
+            return NoContent();
         }
     }
 }

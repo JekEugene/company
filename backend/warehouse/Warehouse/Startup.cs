@@ -11,9 +11,12 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Warehouse.Data;
 using Warehouse.Extensions;
+using Newtonsoft.Json;
+using Warehouse.Services;
 
 namespace Warehouse
 {
@@ -30,13 +33,16 @@ namespace Warehouse
         public void ConfigureServices(IServiceCollection services)
         {
             //services.ConfigureSqlContext(Configuration);
+            services.AddScoped<IProductService, ProductService>();
             services.AddDbContext<WarehouseContext>(options => options
                 .UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
             services.AddCors();
             services.RegisterRepositories(Configuration);
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Warehouse", Version = "v1" });

@@ -14,6 +14,12 @@ namespace Warehouse.Data.Repositories
         {
             _context = context;
         }
+
+        public void AddProductMaterial(ProductMaterial productMaterial)
+        {
+            _context.ProductMaterials.Add(productMaterial);
+        }
+
         public void CreateProduct(Product product)
         {
             _context.Products.Add(product);
@@ -27,15 +33,22 @@ namespace Warehouse.Data.Repositories
         public async Task<Product> GetProductByIdAsync(int id)
             => await _context.Products
             .Include(p => p.Materials)
-            .Include(p => p.ProductMaterials)
+            .IgnoreAutoIncludes()
             .Where(p => p.Id == id)
             .FirstOrDefaultAsync();
+
+        public async Task<List<ProductMaterial>> GetProductMaterialByIdAsync(int id)
+            => await _context.ProductMaterials.Where(pm=>pm.ProductId == id)
+                .Include(pm=>pm.Product)
+                .Include(pm => pm.Material)
+                .ToListAsync();
 
         public async Task<List<Product>> GetProductsAsync()
             => await _context.Products
             .Include(p => p.Materials)
-            .Include(p => p.ProductMaterials)
+            .IgnoreAutoIncludes()
             .ToListAsync();
+
 
         public void Save() => _context.SaveChanges();
     }

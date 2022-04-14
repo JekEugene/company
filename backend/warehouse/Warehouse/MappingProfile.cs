@@ -10,6 +10,7 @@ namespace Warehouse
         {
             CreateMap<MaterialCreateDTO, Material>().ReverseMap();
             CreateMap<ProductCreateDTO, Product>().ReverseMap();
+            CreateMap<ProductMaterialDTO, ProductMaterial>().ReverseMap();
         }
     }
 }
