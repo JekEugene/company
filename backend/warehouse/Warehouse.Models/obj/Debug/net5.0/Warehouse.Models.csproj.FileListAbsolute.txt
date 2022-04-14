@@ -33,3 +33,4 @@ D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse
 D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.dll
 D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\ref\Warehouse.Models.dll
 D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.pdb
+D:\PROJECT\company\backend\warehouse\Warehouse.Models\obj\Debug\net5.0\Warehouse.Models.csproj.AssemblyReference.cache

@@ -31,3 +31,7 @@ D:\PROJECT\company\backend\warehouse\bin\Debug\Warehouse.Models.pdb
 D:\PROJECT\company\backend\warehouse\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 D:\PROJECT\company\backend\warehouse\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\PROJECT\company\backend\warehouse\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\PROJECT\company\backend\warehouse\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\PROJECT\company\backend\warehouse\bin\Debug\Newtonsoft.Json.dll
+D:\PROJECT\company\backend\warehouse\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+D:\PROJECT\company\backend\warehouse\bin\Debug\Newtonsoft.Json.Bson.dll

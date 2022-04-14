@@ -211,3 +211,6 @@ D:\PROJECT\company\backend\warehouse\Warehouse\obj\Debug\net5.0\Warehouse.dll
 D:\PROJECT\company\backend\warehouse\Warehouse\obj\Debug\net5.0\ref\Warehouse.dll
 D:\PROJECT\company\backend\warehouse\Warehouse\obj\Debug\net5.0\Warehouse.pdb
 D:\PROJECT\company\backend\warehouse\Warehouse\obj\Debug\net5.0\Warehouse.genruntimeconfig.cache
+D:\PROJECT\company\backend\warehouse\Warehouse\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\PROJECT\company\backend\warehouse\Warehouse\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\PROJECT\company\backend\warehouse\Warehouse\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
